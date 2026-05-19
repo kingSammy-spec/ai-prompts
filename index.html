@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!-- ===== SEO META TAGS ===== -->
+    <meta name="description" content="PromptPulse is a curated AI prompt studio featuring 300+ production-ready templates for ChatGPT, Claude, and Midjourney. Search, copy, and deploy powerful AI prompts in seconds.">
+    <meta name="keywords" content="AI prompts, ChatGPT prompts, Claude prompts, Midjourney prompts, prompt engineering, AI templates, GPT-4 prompts">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PromptPulse">
+    <link rel="canonical" href="./">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PromptPulse | Curated AI Prompt Studio">
+    <meta property="og:description" content="PromptPulse is a curated AI prompt studio featuring 300+ production-ready templates for ChatGPT, Claude, and Midjourney. Search, copy, and deploy powerful AI prompts in seconds.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:site_name" content="PromptPulse">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PromptPulse | Curated AI Prompt Studio">
+    <meta name="twitter:description" content="PromptPulse is a curated AI prompt studio featuring 300+ production-ready templates for ChatGPT, Claude, and Midjourney. Search, copy, and deploy powerful AI prompts in seconds.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PromptPulse",
+      "description": "PromptPulse is a curated AI prompt studio featuring 300+ production-ready templates for ChatGPT, Claude, and Midjourney. Search, copy, and deploy powerful AI prompts in seconds.",
+      "applicationCategory": "Utility",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <!-- ========================= -->
+    <title>PromptPulse | Curated AI Prompt Studio</title>
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. Detailed Prompt Inspector Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                <!-- Detailed info and parameters injected here dynamically -->
+            </div>
+            
+            <!-- Strategic Campaign Block inside detail view -->
+            <div class="modal-ad">
+                <span class="ad-tag">SPONSORED PLATFORM</span>
+                <div class="modal-ad-grid">
+                    <img id="detail-ad-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&h=200&q=80" alt="Ad">
+                    <div>
+                        <h4 id="detail-ad-title">Midjourney Pro Workspace</h4>
+                        <p id="detail-ad-desc">Acquire premium presets used by Hollywood directors and top concept artists. 60% student rebate.</p>
+                        <button class="ad-btn" id="detail-ad-btn" aria-label="Detail Ad Btn">Explore Suite</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Prompt<span>Pulse</span></div>
+            <div class="header-right">
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="categories.html">Categories</a>
+                </nav>
+                <button class="ad-btn" id="btn-open-prompt-creator" aria-label="Btn Open Prompt Creator">Custom Prompt</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Recruiter Leaderboard Spot -->
+    <div class="ad-leaderboard container">
+        <span class="ad-tag">PREMIUM AI SPONSOR</span>
+        <div class="ad-content">
+            <h3>MASTER INTERACTIVE LLM CHAT SYSTEM</h3>
+            <p>Access the private repository containing 10,000+ verified production-ready templates for Claude & GPT-4.</p>
+            <button class="ad-btn" id="btn-leaderboard-claim" aria-label="Btn Leaderboard Claim">Claim 80% Discount</button>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Modern Search and Action area -->
+        <div class="search-container" style="margin: 2rem 0; display: flex; gap: 1rem; justify-content: center;">
+            <input type="text" id="searchInput" placeholder="Search 300+ prompt node codes..." style="width: 100%; max-width: 600px; padding: 1rem 1.5rem; border-radius: 50px; border: 1px solid rgba(255,255,255,0.08); background: #0a0c16; color: #fff;">
+        </div>
+
+        <!-- Prompts Swatches Grid -->
+        <div class="grid" id="promptGrid">
+            <!-- Prompts injected dynamically by script.js -->
+        </div>
+
+        <!-- Pagination Section -->
+        <div id="pagination" style="display: flex; justify-content: center; align-items: center; margin: 4rem 0;">
+            <!-- Rendered by script.js -->
+        </div>
+    </main>
+
+    <!-- Sidebar Sponsor Widget -->
+    <aside class="sidebar-monetization">
+        <div class="ad-skyscraper">
+            <span class="ad-tag" style="position: static; transform: none; display: inline-block; margin-bottom: 0.5rem;">SPONSORED</span>
+            <div class="ad-slot-vertical">
+                <img id="sidebar-ad-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=160&h=220&q=80" alt="Sponsor Logo">
+                <p id="sidebar-ad-desc">Deploy LLM prompt systems directly to production with one single cloud API.</p>
+                <a href="/" class="ad-link" id="sidebar-ad-link">Learn More →</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Bottom Sticky Anchor Offer -->
+    <div class="sticky-anchor-ad">
+        <div class="container">
+            <div class="anchor-content">
+                <span>🔥 PROMPT MASTER CLASS: 85% OFF ALL SUBSCRIPTIONS FOR LUNCH HOUR!</span>
+                <button class="anchor-btn" id="btn-anchor-claim" aria-label="Btn Anchor Claim">Claim Discount</button>
+            </div>
+            <button class="close-anchor" aria-label="Close">×</button>
+        </div>
+    </div>
+
+    <!-- 2. Custom Prompt Registry Modal -->
+    <div id="promptModal" class="modal" style="z-index: 10020;">
+        <div class="modal-content" style="max-width: 550px; padding: 3rem;">
+            <span class="close-modal" id="btn-close-prompt-modal">&times;</span>
+            <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; margin-bottom: 1rem; color: #fff;">Register Custom Prompt</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">Add custom prompt templates directly to your catalog. Registered items support live clipboard copies.</p>
+
+            <form id="prompt-form" onsubmit="event.preventDefault(); submitCustomPrompt();">
+                <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.2rem;">
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <label style="font-size: 0.8rem; font-weight: 700; color: #fff; text-transform: uppercase;">Prompt Title</label>
+                        <input type="text" id="prompt-title" required placeholder="e.g. Dynamic Python Code Refactorer" style="padding: 0.8rem 1rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; background: #030408; color: #fff; font-family: inherit; font-size: 0.95rem; outline: none;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <label style="font-size: 0.8rem; font-weight: 700; color: #fff; text-transform: uppercase;">Category</label>
+                            <select id="prompt-category" style="padding: 0.8rem 1rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; background: #030408; color: #fff; font-family: inherit; font-size: 0.95rem; outline: none;">
+                                <option value="Creative Writing">Creative Writing</option>
+                                <option value="Coding">Coding</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Art & Design">Art & Design</option>
+                                <option value="Business">Business</option>
+                            </select>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <label style="font-size: 0.8rem; font-weight: 700; color: #fff; text-transform: uppercase;">Target LLM</label>
+                            <select id="prompt-llm" style="padding: 0.8rem 1rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; background: #030408; color: #fff; font-family: inherit; font-size: 0.95rem; outline: none;">
+                                <option value="GPT-4">GPT-4</option>
+                                <option value="Claude 3">Claude 3</option>
+                                <option value="Midjourney">Midjourney</option>
+                                <option value="Stable Diffusion">Stable Diffusion</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <label style="font-size: 0.8rem; font-weight: 700; color: #fff; text-transform: uppercase;">Prompt Template Code</label>
+                        <textarea id="prompt-text" required rows="4" placeholder="Input the instruction parameters (e.g. Act as a senior database optimizer...)" style="padding: 0.8rem 1rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; background: #030408; color: #fff; font-family: inherit; font-size: 0.95rem; outline: none; resize: none;"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="ad-btn" style="width: 100%; padding: 1.1rem; border-radius: 8px;" aria-label="Button">Synchronize Prompt</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. Timed Scarcity Premium Upgrade Modal -->
+    <div id="premiumUpgradeModal" class="modal" style="z-index: 10050;">
+        <div class="modal-content" style="max-width: 650px; text-align: center; padding: 4rem 3rem;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">⚡</div>
+            <span class="ad-tag" style="display: inline-block; margin-bottom: 1rem;">PROMPTPULSE ELITE</span>
+            <h2 style="font-size: 2.8rem; font-family: 'Space Grotesk', sans-serif; font-weight:700; margin-bottom: 1rem; color: #fff; letter-spacing: -0.5px;">Unlock PromptPulse Pro Studio</h2>
+            <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2.5rem;">Access high-fidelity export configurations (CSV, JSON parameters), custom variables libraries, and disable all promotional ads forever.</p>
+
+            <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--panel-border); margin-bottom: 3rem;">
+                <div style="font-size: 0.8rem; font-weight: 800; color: var(--secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">ELITE SUBSCRIPTION CLOSES IN</div>
+                <div id="scarcity-countdown" style="font-size: 2.2rem; font-weight: 800; color: #fff; font-family: monospace; letter-spacing: 2px;">10:00</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <button class="ad-btn" id="btn-upgrade-now" style="width: 100%; padding: 1.2rem; font-size: 1.2rem;" aria-label="Btn Upgrade Now">
+                    Upgrade for $1.99 / mo
+                </button>
+                <button class="btn-secondary" id="btn-skip-upgrade" style="width: 100%; padding: 1rem; border: none; background: transparent; color: var(--text-muted); font-weight: 700; cursor: pointer;" aria-label="Btn Skip Upgrade">
+                    Keep Standard Tier
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Interstitial Skip-Ad Modal Overlay -->
+    <div id="interstitialModal" class="modal" style="z-index: 10100;">
+        <div class="modal-content" style="max-width: 600px; text-align: center; padding: 3rem; position:relative;">
+            <span class="ad-tag" style="display: inline-block; margin-bottom: 1.5rem;">SPONSORED PLATFORM</span>
+            
+            <div class="ad-sponsor-container" style="display: flex; gap: 2rem; align-items: center; text-align: left; margin-bottom: 2.5rem;">
+                <img id="interstitial-ad-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=200&h=200&q=80" style="width: 140px; height: 140px; border-radius: 12px; object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                <div>
+                    <h3 id="interstitial-ad-title" style="font-size: 1.5rem; font-family: 'Space Grotesk', sans-serif; font-weight:700; margin-bottom: 0.5rem; color:#fff; letter-spacing: -0.5px;">Midjourney Pro Workspace</h3>
+                    <p id="interstitial-ad-desc" style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">Acquire premium presets used by Hollywood directors and top concept artists. 60% student rebate.</p>
+                </div>
+            </div>
+
+            <div id="interstitial-ad-promo" style="background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: 8px; font-weight: 700; color: var(--secondary); font-size: 0.9rem; letter-spacing: 0.5px; border: 1px dashed var(--panel-border); margin-bottom: 2.5rem;">
+                CODE "MJPRO60" FOR 60% OFF
+            </div>
+
+            <div style="display: flex; gap: 1.5rem;">
+                <button class="btn-secondary" id="btn-skip-ad" style="flex: 1; padding: 1rem; opacity: 0.4; cursor: not-allowed; border: 1px solid var(--panel-border); background: none; color: #fff; font-weight:700;" disabled aria-label="Btn Skip Ad">
+                    Skip Ad in 5s
+                </button>
+                <button class="ad-btn" id="btn-claim-ad" style="flex: 1; padding: 1rem;" aria-label="Btn Claim Ad">
+                    Claim Offer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Dynamic Inspiration Sync Celebration Success Modal -->
+    <div id="celebrationModal" class="modal" style="z-index: 10200;">
+        <div class="modal-content" style="max-width: 500px; text-align: center; padding: 3rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem; animation: pulse 1.5s infinite;">💎</div>
+            <h2 style="font-size: 2.2rem; font-family: 'Space Grotesk', sans-serif; font-weight:700; margin-bottom: 1rem; color: #fff; letter-spacing: -0.5px;">Prompt Synchronized!</h2>
+            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2.5rem;">Your high-fidelity AI parameters, token lengths, and template codes are dynamically synchronized!</p>
+            <button class="ad-btn" id="btn-close-celebration" style="width: 100%;" aria-label="Btn Close Celebration">
+                Acknowledge Success
+            </button>
+        </div>
+    </div>
+
+    <!-- 6. Glassmorphic Exit Intent Discount Modal -->
+    <div id="exitIntentModal" class="modal" style="z-index: 10300;">
+        <div class="modal-content" style="max-width: 600px; text-align: center; padding: 4rem 3rem;">
+            <span class="close-modal" id="closeExitIntent">&times;</span>
+            <span class="ad-tag" style="display:inline-block; margin-bottom:1rem; position:static;">WAIT! BEFORE YOU LEAVE...</span>
+            <h2 style="font-size: 2.8rem; font-family: 'Space Grotesk', sans-serif; font-weight:700; margin-bottom: 1rem; color: #fff; letter-spacing: -0.5px;">Claim 80% Off Pro Studio</h2>
+            <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2.5rem;">Unlock the complete prompt engineering automation tools and disable all sponsored banners forever.</p>
+            <button class="ad-btn" style="width: 100%; font-size: 1.2rem; padding: 1.1rem;" aria-label="Button">
+                Claim 80% Discount Now
+            </button>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem;"><a href="/" id="declineExitIntent" style="color: var(--text-muted); text-decoration: underline;">No thanks, I prefer standard tier</a></p>
+        </div>
+    </div>
+
+    <!-- 7. Premium Mock Ad Blocker Modal -->
+    <div id="adBlockModal" class="modal" style="z-index: 10400; background: rgba(3,4,8,0.92);">
+        <div class="modal-content" style="max-width: 500px; text-align: center; padding: 3rem;">
+            <h2 style="font-size: 2.2rem; color: var(--accent); font-family: 'Space Grotesk', sans-serif; font-weight:700; margin-bottom: 1rem; letter-spacing: -0.5px;">Ad Blocker Detected</h2>
+            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2.5rem;">We support our prompt libraries through executive sponsorships. Please consider whitelisting or support by upgrading today!</p>
+            <div style="display: flex; gap: 1rem;">
+                <button class="ad-btn" style="flex: 1;" onclick="location.reload()" aria-label="Button">I Whitelisted</button>
+                <button class="ad-btn" style="flex: 1; background: var(--accent);" id="btn-adblock-premium" aria-label="Btn Adblock Premium">Go Premium ($1.99)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Decoupled Floating Programmatic Ad Banner -->
+    <div class="floating-ad-banner" id="floating-ad-banner" style="display: none;">
+        <!-- Injected programmatically by script.js -->
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">Prompt<span>Pulse</span></div>
+                <div class="footer-links">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="index.html">Latest Prompts</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="/">Top Rated</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="/">FAQ</a></li>
+                        <li><a href="/">Contact Us</a></li>
+                        <li><a href="/">AI Ethics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Mentorship</h4>
+                    <ul>
+                        <li><a href="/" id="footer-adblock-premium-btn">Ad-Free Tier</a></li>
+                        <li><a href="/">Prompt Consulting</a></li>
+                        <li><a href="/">Corporate API</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PromptPulse. All rights reserved. | <a href="terms.html">Terms & Conditions</a> | <a href="policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.min.js"></script>
+
+</body>
+</html>
